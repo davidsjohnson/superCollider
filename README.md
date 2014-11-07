@@ -6,11 +6,13 @@ Running this script will create three SynthDefs that use granular synthesis tech
 
 
 ## To use this view:
+NOTE: Instructions assume you are familiar with the Kuatro.
 
 
 1. Launch kuatroBegin.py to start up the Kuatro
 2. Open KuatroView.scd in superCollider
-3. Launch the superCollider Server - <strong> cmd-b (or crtl-b on Windows) </strong>
+3. Launch the superCollider Server
+  - cmd-b (or crtl-b on Windows)
 4. Run the superCollider script
-  1. Place your cursor in the text editor
-  2. cmd-enter (or crtl-enter on Windows)
+  - Place your cursor in the text editor
+  - cmd-enter (or crtl-enter on Windows)
