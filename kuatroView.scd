@@ -28,7 +28,8 @@ Using Granular Synthesis
     bufnum: 2
  );
 
-
+// Create new Synth Defs to be controlled by user coordinate
+// via incoming OSC messages.
 SynthDef(\user1sound, {
 	arg userX = 0, userY = 0;
     var buffer = 0, grains;
@@ -97,14 +98,15 @@ m = NetAddr("localhost", 50505);
 m.sendMsg("/kuatro/registerView","localhost", NetAddr.langPort);
 
 /*
+User Data
+*/
+~users = Dictionary.new();                          // data structure to store user number and sound
+~sounds = [\user1sound, \user2sound, \user3sound];  // list of synthdefs to be assigned to a new user
+
+
+/*
 Setup OSC Input Functions
 */
-
-~users = Dictionary.new();
-~sounds = [\user1sound, \user2sound, \user3sound];
-
-
-
 ~newUserOSC = OSCFunc( { | msg, time, addr, port |
 
 	// Get data from OSC Message
